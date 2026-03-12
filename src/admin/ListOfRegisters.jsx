@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-
+import './admin.css'
 export default function ListOfRegisters() {
     const [registration,setRegistration]=useState([])
     useEffect(() => {

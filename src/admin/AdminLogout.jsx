@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
-
+import './admin.css'
 export default function AdminLogout() {
     const navigate=useNavigate()
     useEffect(() => {

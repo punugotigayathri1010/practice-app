@@ -1,0 +1,77 @@
+/* General Page Style */
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:#f4f6f9;
+}
+
+/* Navigation Bar */
+.tag{
+    background-color:#2c3e50;
+    padding:15px;
+    text-align:center;
+}
+
+.tag a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-size:17px;
+    font-weight:500;
+}
+
+.tag a:hover{
+    color:#f1c40f;
+}
+
+/* Headings */
+h2{
+    text-align:center;
+    margin-top:20px;
+    color:#2c3e50;
+}
+
+/* Admin Home */
+.admin-home{
+    text-align:center;
+    margin-top:60px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* Table Styling */
+table{
+    width:80%;
+    margin:30px auto;
+    border-collapse:collapse;
+    background-color:white;
+    box-shadow:0 0 6px rgba(0,0,0,0.15);
+}
+
+/* Table Header */
+th{
+    background-color:#3498db;
+    color:white;
+    padding:10px;
+    border:1px solid #ddd;
+}
+
+/* Table Data */
+td{
+    padding:10px;
+    text-align:center;
+    border:1px solid #ddd;
+}
+
+/* Alternate row color */
+tr:nth-child(even){
+    background-color:#f2f2f2;
+}
+
+/* Loading / message text */
+b{
+    display:block;
+    text-align:center;
+    margin-top:20px;
+    color:#555;
+}

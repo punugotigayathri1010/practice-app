@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useEffect } from 'react';
-
+import './admin.css'
 export default function ApiDetails() {
     const [object,setObject]=useState([])
     const[error,setError]=useState('')

@@ -30,8 +30,8 @@ export default function AdminLogin() {
       sessionStorage.setItem('isAdmin',true)
       sessionStorage.setItem('username',data.username)
       setLoginSuccess(true)
-     window.location.href='/adminhome'
-    //navigate('/adminhome')
+     //window.location.href='/adminhome'
+    navigate('/adminhome')
     }
     else{
       setError('login failed')

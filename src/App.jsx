@@ -1,24 +1,38 @@
-import { useEffect, useState } from 'react'
-import { BrowserRouter } from 'react-router-dom'
-import MainNavBar from './pages/MainNavBar'
-import AdminNavBar from './admin/AdminNavBar'
+import { BrowserRouter, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+
+import AdminNavBar from "./admin/AdminNavBar";
+import MainNavBar from "./pages/MainNavBar";
 
 function App() {
-  const [admin, setAdmin] = useState(false)
+  const getRole = () => {
+    if (sessionStorage.getItem("isAdmin") === "true") return "admin";
+    return "guest";
+  };
 
-  useEffect(() => {
-    const status = sessionStorage.getItem('isAdmin') === 'true'
-    setAdmin(status)
-  }, [])
+  const [role, setRole] = useState(getRole());
 
   return (
-    <div>
-      <h2 style={{ textAlign: 'center' }}>Lab exam</h2>
-      <BrowserRouter>
-        {admin ? <AdminNavBar /> : <MainNavBar />}
-      </BrowserRouter>
-    </div>
-  )
+    <BrowserRouter>
+      <RoleHandler role={role} setRole={setRole} />
+    </BrowserRouter>
+  );
 }
 
-export default App
+function RoleHandler({ role, setRole }) {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Update role whenever location changes (or login/logout happens)
+    if (sessionStorage.getItem("isAdmin") === "true") {
+      setRole("admin");
+    } else {
+      setRole("guest");
+    }
+  }, [location, setRole]);
+
+  if (role === "admin") return <AdminNavBar />;
+  return <MainNavBar />;
+}
+
+export default App;

@@ -7,8 +7,8 @@ export default function AdminLogout() {
   
         sessionStorage.removeItem('isAdmin')
         sessionStorage.removeItem('username')
-      window.location.href='/'
-   // navigate('/')
+     // window.location.href='/'
+    navigate('/')
     }, [navigate]);
   return (
     <div>

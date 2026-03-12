@@ -1,21 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import Registration from './pages/Registration'
+import { useEffect, useState } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import MainNavBar from './pages/MainNavBar'
-//import './App.css'
+import AdminNavBar from './admin/AdminNavBar'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [admin, setAdmin] = useState(false)
+
+  useEffect(() => {
+    const status = sessionStorage.getItem('isAdmin') === 'true'
+    setAdmin(status)
+  }, [])
 
   return (
-   <div>
-<h2 style={{textAlign:'center'}}>Lab exam </h2>
-<BrowserRouter>
-<MainNavBar/>
-</BrowserRouter>
-   </div>
+    <div>
+      <h2 style={{ textAlign: 'center' }}>Lab exam</h2>
+      <BrowserRouter>
+        {admin ? <AdminNavBar /> : <MainNavBar />}
+      </BrowserRouter>
+    </div>
   )
 }
 

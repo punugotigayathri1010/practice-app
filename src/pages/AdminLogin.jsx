@@ -8,6 +8,7 @@ export default function AdminLogin() {
     password:''
   })
   const [error,setError]=useState('');
+  const [loginSuccess, setLoginSuccess] = useState(false)
   const handleChange=(e)=>{
     const {name,value}=e.target
     setData({
@@ -28,13 +29,16 @@ export default function AdminLogin() {
       alert("login successfull")
       sessionStorage.setItem('isAdmin',true)
       sessionStorage.setItem('username',data.username)
-      
-      navigate('/registration')
+      setLoginSuccess(true)
+    // window.location.href='/adminhome'
+    navigate('/adminhome')
     }
     else{
       setError('login failed')
   
     }
+     
+
   }
   return (
     <div>

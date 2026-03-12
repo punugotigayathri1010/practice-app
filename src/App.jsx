@@ -13,7 +13,7 @@ function App() {
   const [role, setRole] = useState(getRole());
 
   return (
-    <BrowserRouter>
+    <BrowserRouter  basename="/practice-app">
       <RoleHandler role={role} setRole={setRole} />
     </BrowserRouter>
   );
